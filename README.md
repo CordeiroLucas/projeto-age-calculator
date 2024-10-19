@@ -10,7 +10,6 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
@@ -52,11 +51,6 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
-### What I learned
-
-
 
 ### Continued development
 
@@ -65,8 +59,7 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/cordeirolucas)
 
 ## Acknowledgments
 
