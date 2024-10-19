@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="stylesheet" href="./src/css/styles.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="container-inputs">
+      <div class="input-field invalid-input">
+        <h2>Day</h2>
+        <input placeholder="DD" id="input-day" type="number">
+        <p class="error-message" id="error-day">Teste</p>
+      </div>
+      <div class="input-field">
+        <h2>Month</h2>
+        <input placeholder="MM" id="input-month" type="number">
+        <p class="error-message" id="error-month"></p>
+      </div>
+      <div class="input-field">
+        <h2>Year</h2>  
+        <input placeholder="YYYY" id="input-year" type="number" >
+        <p class="error-message" id="error-year"></p>
+      </div>
+    </header>
+    <div class="container-button">
+      <div class="button-icon" id="submit-button">
+        <img src="./assets/images/icon-arrow.svg" alt="flecha">
+      </div>  
+    </div>
+    <div class="container-results">
+      <div class="result">
+        <h1 class="result-value" id="year-value">--</h1>
+        <h1>years</h1>
+      </div>
+      <div class="result">
+        <h1 class="result-value" id="month-value">--</h1>
+        <h1>months</h1>
+      </div>
+      <div class="result">
+        <h1 class="result-value" id="day-value">--</h1>
+        <h1>days</h1> 
+      </div>
+    </div>    
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">CordeiroLucas</a>.
+  </div>
+</body>
+</html>
