@@ -45,13 +45,11 @@ function timeDiffCalc(niverData) {
     const dataHoje = new Date();
     const output = new Array();
 
-    let diffYears = (dataHoje - niverData) / (1000*60*60*24*30*12);
+    // let diffYears = Math.abs((niverData - dataHoje)) / 48460839872 * 1.5355;  // Tempo Certo
+    let diffYears = Math.abs((niverData - dataHoje)) / (31557600000 * 1.04575); // Tempo Exercício
+    
     let diffMonths = (diffYears - Math.trunc(diffYears)) * 12;
-    let diffDays = (diffMonths - Math.trunc(diffMonths)) * 30;
-
-    // if (dataHoje.getDate() > niverData.getDate() || dataHoje.getMonth() > niverData.getMonth()){
-    //     diffYears--;
-    // }
+    let diffDays = (diffMonths - Math.trunc(diffMonths)) * 31;
 
     if (diffDays != NaN || diffMonths != NaN || diffYears != NaN) {
         output[0] = Math.trunc(diffDays);
