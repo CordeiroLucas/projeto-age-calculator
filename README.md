@@ -25,25 +25,27 @@ Users should be able to:
 
 - View an age in years, months, and days after submitting a valid date through the form
 - Receive validation errors if:
-  - Any field is empty when the form is submitted
-  - The day number is not between 1-31
-  - The month number is not between 1-12
-  - The year is in the future
-  - The date is invalid e.g. 31/04/1991 (there are 30 days in April)
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+  - Any field is empty when the form is submitted ok
+  - The day number is not between 1-31 ok
+  - The month number is not between 1-12 ok 
+  - The year is in the future ok
+  - The date is invalid e.g. 31/04/1991 (there are 30 days in April) 
+- View the optimal layout for the interface depending on their device's screen size ok
+- See hover and focus states for all interactive elements on the page ok
 - **Bonus**: See the age numbers animate to their final number when the form is submitted
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repositório Solução](https://github.com/CordeiroLucas/projeto-age-calculator)
+- Live Site URL: [Age Calculator](https://cordeirolucas.github.io/projeto-age-calculator/)
 
 ## My process
 
 - Realizei o HTML e CSS básico
 - Responsivo
 - JS Calculando
+- Tratamento de erros (Ainda faltam alguns)
+- Mostrar na tela erros
 
 ### Built with
 
@@ -56,12 +58,13 @@ Users should be able to:
 
 ### Continued development
 
-- Tratamento de erros
-- Mostrar na tela erros (Ainda não consegui)
+- Falta se a data é válida (como um todo)
+  - Se anoNiver < anoAtual OK ter o mes maior
+  - Se mesNiver < mesAtual Ok ter o dia maior
 
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/cordeirolucas)
+- Frontend Mentor - [@CordeiroLucas](https://www.frontendmentor.io/profile/cordeirolucas)
 
 ## Acknowledgments

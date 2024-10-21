@@ -26,21 +26,23 @@ buttonElement.addEventListener("click", () => {
 
         let niverData = new Date(year, monthIndex, day);
 
-        document.getElementById("day-value").innerHTML = calcularDiferença(niverData)[0];
-        document.getElementById("month-value").innerHTML = calcularDiferença(niverData)[1]; 
-        document.getElementById("year-value").innerHTML = calcularDiferença(niverData)[2];
+        showResult(calcularDiferença(niverData));
     }
 })
+
+function showResult(resultados){
+    document.getElementById("year-value").innerHTML = resultados[2];
+    document.getElementById("month-value").innerHTML = resultados[1]; 
+    document.getElementById("day-value").innerHTML = resultados[0];
+}
 
 function resetPage() {
     listInputField.forEach(field => {
         field.classList.remove("invalid-input");
     });
-
     document.querySelectorAll(".result-value").forEach(value => {
         value.innerHTML = "--";
     });
-
 }
 
 // Calcula diferença entre niver e data atual
@@ -69,11 +71,11 @@ function errorHandling(dateEntries) {
         if (dateEntries[2].value <= dataHoje.getFullYear()) {
             year = dateEntries[2].value;
         } else {
-            showErrorMessage(2, "Year Must Be Valid");
+            showErrorMessage(2, "Must be in the Past");
             output = -1;
         }
     } else {
-        console.log("Campo Ano Vazio!");
+        // console.log("Campo Ano Vazio!");
         showErrorMessage(2, "This Field is Required");
         output = -1;
     }
@@ -86,7 +88,7 @@ function errorHandling(dateEntries) {
             output = -1;
         }
     } else {
-        console.log("Campo Mes Vazio!");
+        // console.log("Campo Mes Vazio!");
         showErrorMessage(1, "This Field is Required");
         output = -1;
     }
@@ -99,7 +101,7 @@ function errorHandling(dateEntries) {
             output -1;
         }
     } else {
-        console.log("Campo Dia Vazio!");
+        // console.log("Campo Dia Vazio!");
         showErrorMessage(0, "This Field is Required");
         output = -1;
     }
