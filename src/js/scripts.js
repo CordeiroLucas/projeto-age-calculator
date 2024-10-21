@@ -24,9 +24,9 @@ buttonElement.addEventListener("click", () => {
 
         let niverData = new Date(year, monthIndex, day);
 
-        document.getElementById("day-value").innerHTML = timeDiffCalc(niverData)[0];
-        document.getElementById("month-value").innerHTML = timeDiffCalc(niverData)[1]; 
-        document.getElementById("year-value").innerHTML = timeDiffCalc(niverData)[2];
+        document.getElementById("day-value").innerHTML = calcularDiferença(niverData)[0];
+        document.getElementById("month-value").innerHTML = calcularDiferença(niverData)[1]; 
+        document.getElementById("year-value").innerHTML = calcularDiferença(niverData)[2];
     }
 })
 
@@ -41,7 +41,9 @@ function resetPage() {
 
 }
 
-function timeDiffCalc(niverData) {
+// Calcula diferença entre niver e data atual
+
+function calcularDiferença(niverData) {
     const dataHoje = new Date();
     const output = new Array();
 
