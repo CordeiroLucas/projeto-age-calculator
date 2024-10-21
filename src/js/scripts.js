@@ -21,9 +21,7 @@ buttonElement.addEventListener("click", () => {
                     year = dateInput.value;
             }
         })
-
-        console.log(day, monthIndex, year);
-
+        // console.log(day, monthIndex, year);
         let niverData = new Date(year, monthIndex, day);
 
         showResult(calcularDiferença(niverData));
@@ -46,15 +44,12 @@ function resetPage() {
 }
 
 // Calcula diferença entre niver e data atual
-
 function calcularDiferença(niverData) {
     const output = new Array();
 
-    let diffYears = Math.abs((niverData - dataHoje)) / 48460839872 * 1.5355;  // Tempo Certo
-    // let diffYears = Math.abs((niverData - dataHoje)) / (31557600000 * 1.04575); // Tempo Exercício
-    
-    let diffMonths = (diffYears - Math.trunc(diffYears)) * 12;
-    let diffDays = (diffMonths - Math.trunc(diffMonths)) * 31;
+    const diffYears = Math.abs((niverData - dataHoje)) / 48460839872 * 1.5355;  // Tempo Certo
+    const diffMonths = (diffYears - Math.trunc(diffYears)) * 12;
+    const diffDays = (diffMonths - Math.trunc(diffMonths)) * 31;
 
     if (diffDays != NaN || diffMonths != NaN || diffYears != NaN) {
         output[0] = Math.trunc(diffDays);
@@ -64,9 +59,11 @@ function calcularDiferença(niverData) {
     } else return "--";
 }
 
+// Handling the wrong entries 
 function errorHandling(dateEntries) {
     let output = 0;
 
+    // Year 
     if (dateEntries[2].value != "") {
         if (dateEntries[2].value <= dataHoje.getFullYear()) {
             year = dateEntries[2].value;
@@ -80,6 +77,7 @@ function errorHandling(dateEntries) {
         output = -1;
     }
 
+    // Month
     if (dateEntries[1].value != "") {
         if (dateEntries[1].value >= 1 && dateEntries[1].value <= 12) {
             monthIndex = dateEntries[1].value;
@@ -93,6 +91,7 @@ function errorHandling(dateEntries) {
         output = -1;
     }
 
+    // Day
     if (dateEntries[0].value != "") {
         if (dateEntries[0].value >= 1 && dateEntries[0].value <= 31) {
             day = dateEntries[0].value;
@@ -105,7 +104,6 @@ function errorHandling(dateEntries) {
         showErrorMessage(0, "This Field is Required");
         output = -1;
     }
-
     return output;
 }
 
