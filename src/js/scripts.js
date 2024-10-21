@@ -85,12 +85,3 @@ function errorHandling(dateEntries) {
     }
     return output;
 }
-
-
-// let inputDay = document.getElementById("input-day");
-// let inputMonth = document.getElementById("input-month");
-// let inputYear = document.getElementById("input-year");
-
-// console.log(inputDay);
-
-// console.log(inputDay.value, "/", inputMonth.value, "/", inputYear.value);
