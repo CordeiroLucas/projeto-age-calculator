@@ -42,6 +42,8 @@ Users should be able to:
 ## My process
 
 - Realizei o HTML e CSS básico
+- Responsivo
+- JS Calculando
 
 ### Built with
 
@@ -54,8 +56,9 @@ Users should be able to:
 
 ### Continued development
 
-- Falta Tornar Responsivo
-- Realizar JS
+- Tratamento de erros
+- Mostrar na tela
+
 
 ## Author
 
