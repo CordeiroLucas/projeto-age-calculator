@@ -2,6 +2,8 @@ const listInputField = document.querySelectorAll(".input-field");
 const listInputData = document.querySelectorAll(".input-field input");
 const buttonElement = document.getElementById("submit-button");
 
+const dataHoje = new Date();
+
 buttonElement.addEventListener("click", () => {
     let day, monthIndex, year;
     resetPage();
@@ -44,11 +46,10 @@ function resetPage() {
 // Calcula diferença entre niver e data atual
 
 function calcularDiferença(niverData) {
-    const dataHoje = new Date();
     const output = new Array();
 
-    // let diffYears = Math.abs((niverData - dataHoje)) / 48460839872 * 1.5355;  // Tempo Certo
-    let diffYears = Math.abs((niverData - dataHoje)) / (31557600000 * 1.04575); // Tempo Exercício
+    let diffYears = Math.abs((niverData - dataHoje)) / 48460839872 * 1.5355;  // Tempo Certo
+    // let diffYears = Math.abs((niverData - dataHoje)) / (31557600000 * 1.04575); // Tempo Exercício
     
     let diffMonths = (diffYears - Math.trunc(diffYears)) * 12;
     let diffDays = (diffMonths - Math.trunc(diffMonths)) * 31;
@@ -63,25 +64,50 @@ function calcularDiferença(niverData) {
 
 function errorHandling(dateEntries) {
     let output = 0;
-    if (dateEntries[0].value != "") day = dateEntries[0].value;
-    else {
-        console.log("Campo Dia Vazio!");
-        listInputField[0].classList.add("invalid-input");
-        output = -1;
-    }
 
-    if (dateEntries[1].value != "") monthIndex = dateEntries[1].value;
-    else {
-        console.log("Campo Mes Vazio!");
-        listInputField[1].classList.add("invalid-input");
-        output = -1;
-    }
-
-    if (dateEntries[2].value != "") year = dateEntries[2].value;
-    else {
+    if (dateEntries[2].value != "") {
+        if (dateEntries[2].value <= dataHoje.getFullYear()) {
+            year = dateEntries[2].value;
+        } else {
+            showErrorMessage(2, "Year Must Be Valid");
+            output = -1;
+        }
+    } else {
         console.log("Campo Ano Vazio!");
-        listInputField[2].classList.add("invalid-input");
+        showErrorMessage(2, "This Field is Required");
         output = -1;
     }
+
+    if (dateEntries[1].value != "") {
+        if (dateEntries[1].value >= 1 && dateEntries[1].value <= 12) {
+            monthIndex = dateEntries[1].value;
+        }else {
+            showErrorMessage(1, "Month Must Be Valid");
+            output = -1;
+        }
+    } else {
+        console.log("Campo Mes Vazio!");
+        showErrorMessage(1, "This Field is Required");
+        output = -1;
+    }
+
+    if (dateEntries[0].value != "") {
+        if (dateEntries[0].value >= 1 && dateEntries[0].value <= 31) {
+            day = dateEntries[0].value;
+        } else {
+            showErrorMessage(0, "Day Must Be Valid");
+            output -1;
+        }
+    } else {
+        console.log("Campo Dia Vazio!");
+        showErrorMessage(0, "This Field is Required");
+        output = -1;
+    }
+
     return output;
+}
+
+function showErrorMessage(fieldIndex, errorMessage) {
+    listInputField[fieldIndex].classList.add("invalid-input");
+    listInputField[fieldIndex].querySelector(".error-message").innerHTML = errorMessage;
 }
