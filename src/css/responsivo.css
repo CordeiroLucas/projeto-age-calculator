@@ -1,0 +1,51 @@
+@media(max-width: 800px) {
+    main {
+        width: 80%;
+    }
+
+    .container-inputs {
+        padding-bottom: 5em;
+        margin-bottom: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-inputs .input-field {
+        justify-content: center;
+        margin: 0 0.5em;
+    }
+
+    input {
+        width: 3.5em;
+        height: 2em;
+        
+
+        padding-left: 16px;
+        border-radius: 5px;
+        border: 1px solid hsl(0, 0%, 86%);
+    
+        cursor: pointer;
+    }
+
+    .container-button {
+        justify-content: center;
+    }
+
+    .container-button .button-icon {
+        width: 5em;
+        height: 5em;
+    }
+
+    .container-results {
+        margin-top: 5%;
+    }
+
+    .container-results h1 {
+        min-width: none;
+
+    }
+
+    .container-results .result-value {
+        letter-spacing: 2px;
+    }
+}
