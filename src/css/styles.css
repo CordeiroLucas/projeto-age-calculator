@@ -13,7 +13,7 @@ body {
 main {
     background-color: white;
     padding: 45px;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
     width: 700px;
 
     border-radius: 20px 20px 150px;
@@ -24,7 +24,6 @@ main {
 .container-inputs {
     display: flex;
     justify-content: left;
-    align-items: top;
 
     height: 100px;
 
@@ -52,18 +51,20 @@ input {
     height: 65px;
     
     font-size: 32px;
-    font-weight: 700;
-
     padding-left: 16px;
     border-radius: 5px;
     border: 1px solid hsl(0, 0%, 86%);
 
-    
+    color: hsl(0, 0%, 8%);
+    cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    appearance: none;
 }
 
 input:focus-visible {
     outline: solid 1px hsl(259, 100%, 65%);
-    color: hsl(0, 0%, 8%);
     border: 0px;
 }
 
@@ -71,6 +72,7 @@ input:focus-visible {
 
 .input-field.invalid-input {
     color: hsl(0, 100%, 67%);
+    
 }
 
 .input-field.invalid-input input {
@@ -78,10 +80,15 @@ input:focus-visible {
 }
 
 .error-message {
+    display: none;
     font-weight: 400;
     text-transform: none;
     letter-spacing: 0px;
     margin-top: 8px;
+}
+
+.input-field.invalid-input .error-message {
+    display: block;
 }
 
 /* BUTTON CONTAINER SECTION */
@@ -95,14 +102,11 @@ input:focus-visible {
     display: flex;
     justify-content: center;
     align-items: center;
-
     cursor: pointer;
 
     background-color: hsl(259, 100%, 65%);
 
     margin-top: -46px;
-    right: 0;
-
     width: 90px;
     height: 90px;
     border-radius: 100%;
@@ -126,7 +130,7 @@ input:focus-visible {
 .container-results .result {
     display: flex;
     align-items: center;
-    margin-bottom: -30px;
+    margin-bottom: -40px;
 }
 
 .container-results h1 {
