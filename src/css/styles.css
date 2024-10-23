@@ -150,6 +150,18 @@ input:hover {
     letter-spacing: 10px;
 }
 
+.attribution {
+    display: flex;
+}
+
+.attribution {
+    font-size: 10px;
+    letter-spacing: 0px;
+    text-transform: none;
+    padding-left: 12px;
+    cursor: pointer;
+}
+
 p, h2 {
     text-transform: uppercase;
     letter-spacing: 4px;
